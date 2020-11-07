@@ -3,52 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore , applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import allReducer from './reducers/index';
 import thunk from 'redux-thunk';
 
-
 const store = createStore(
   allReducer,
-  applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(thunk)
   )
 
+  // const browserTool = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 
-// import { createStore } from 'redux';
 
-// //STORE GLOBALIZED STATE
-// //ACTION 
-// const increment = () => {
-//   return {
-//     type: 'INCREMENT'
-//   }
-// }
 
-// const decrement = () => {
-//   return {
-//     type: 'DECREMENT'
-//   }
-// }
-// //REDUCER 
 
-// const counter = (state = 0, action) => {
-//   switch(action.type){
-//     case 'INCREMENT':
-//       return state + 1;
-//     case 'DECREMENT':
-//       return state -1
-//   }
-// }
-
-// let store = createStore(counter)
-// //display it in the console
-// store.subscribe(() => console.log(store.getState()));
-
-// //DISPATCH
-
-// store.dispatch(increment())
 
 ReactDOM.render(
   <React.StrictMode>
